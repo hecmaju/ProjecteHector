@@ -11,7 +11,7 @@ Un diseño **responsivo** garantiza que un sitio web se vea bien y funcione corr
 - **Descripción**: Un sitio de comercio electrónico responsivo permite que los usuarios naveguen y realicen compras desde cualquier dispositivo sin problemas. En pantallas grandes, el diseño muestra categorías de productos, mientras que en dispositivos móviles, el contenido se ajusta de manera que los productos se muestran en una lista vertical con imágenes más grandes y botones de llamada a la acción visibles.
 - **Técnica aplicada**: Uso de **media queries** y **flexbox** para ajustar la disposición de los elementos según el tamaño de la pantalla.
   
-![Ejemplo de comercio electrónico responsivo](/site/img/responsive_02.jpg)
+![Ejemplo de comercio electrónico responsivo](/img/responsive_02.jpg)
 
 ## 2. Diseño Minimalista
 

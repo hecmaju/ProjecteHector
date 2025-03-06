@@ -27,7 +27,7 @@ theme:
 
 site_description: "Un proyecto sobre el diseño web, sus principios, herramientas y tendencias."
 site_author: "Héctor Martínez Juan"
-#repo_url: "https://github.com/hecmaju/ProjecteHectorMartinez.git"
+repo_url: "https://github.com/hecmaju/ProjecteHectorMartinez.git"
 nav:
   - Home: index.md
   - Diseño Web: 

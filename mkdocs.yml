@@ -1,6 +1,6 @@
 site_name: Projecte Hector Martinez Juan
-site_dir: 'site'
-docs_dir: 'docs'
+site_dir: 'docs'
+docs_dir: 'md'
 dev_addr: localhost:8000
 theme:
   name: material

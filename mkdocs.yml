@@ -1,0 +1,37 @@
+site_name: Projecte Hector Martinez Juan
+#site_dir: 'md'
+#docs_dir: 'docs'
+dev_addr: localhost:8000
+theme:
+  name: material
+  highlightjs: true
+  palette:
+    # Botón para cambiar a modo oscuro
+    - scheme: default
+      primary: deep-purple
+      accent: deep-purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Botón para cambiar a modo claro
+    - scheme: slate
+      primary: deep-purple
+      accent: deep-purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    code: Roboto Mono
+  favicon: img/favicon.png
+  logo: img/favicon.png
+
+site_description: "Un proyecto sobre el diseño web, sus principios, herramientas y tendencias."
+site_author: "Héctor Martínez Juan"
+#repo_url: "https://github.com/hecmaju/ProjecteHectorMartinez.git"
+nav:
+  - Home: index.md
+  - Diseño Web: 
+      - Usabilidad: usabilidad.md
+      - Herramientas: herramientas.md
+      - DOM: dom.md
+      - Ejemplos: ejemplos.md

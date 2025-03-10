@@ -1,14 +1,14 @@
-# 1. Introducció 
+# 1. Introducción
 
-### Què és DOM? 
+### ¿Qué es DOM?
 
-El DOM (Document Object Model) és una API per a XML, el que sense sigles vol dir que és una capa de programació intermèdia que representa un document i que ens permet modificar-lo. En altres paraules, és una sèrie de funcions i procediments que ens permeten treballar sobre un model abstracte d'un document, servint com a mitjà de comunicació entre el nostre llenguatge de programació (en aquest cas JavaScript) i els continguts del document.
+El DOM (Document Object Model) es una API para XML, lo que sin siglas significa que es una capa de programación intermedia que representa un documento y que nos permite modificarlo. En otras palabras, es una serie de funciones y procedimientos que nos permiten trabajar sobre un modelo abstracto de un documento, sirviendo como medio de comunicación entre nuestro lenguaje de programación (en este caso JavaScript) y los contenidos del documento.
 
-**Quan una pàgina web és carregada, el navegador crea un Model d'Objectes del Document (DOM)** 
+**Cuando una página web es cargada, el navegador crea un Modelo de Objetos del Documento (DOM)**
 
-Cadascun dels elements (etiquetes) que es troben al fitxer `.html` es converteix en un node. Aquests nodes estan relacionats amb una relació pare-fill, de manera que un node pare pot tenir molts nodes fills, però un node fill només pot tenir un node pare. És per això que també se'l coneix com a arbre DOM. El node arrel del qual sorgeix tot l'arbre de nodes s'anomena `document`. 
+Cada uno de los elementos (etiquetas) que se encuentran en el archivo `.html` se convierte en un nodo. Estos nodos están relacionados con una relación padre-hijo, de manera que un nodo padre puede tener muchos nodos hijos, pero un nodo hijo solo puede tener un nodo padre. Es por eso que también se le conoce como árbol DOM. El nodo raíz del cual surge todo el árbol de nodos se llama `document`.
 
-**Exemple 1: Vegem en aquest exemple, si carreguem al navegador aquest fitxer html** 
+**Ejemplo 1: Veamos en este ejemplo, si cargamos en el navegador este archivo html**
 ```html
 <!DOCTYPE html>
   <html>
@@ -20,34 +20,33 @@ Cadascun dels elements (etiquetes) que es troben al fitxer `.html` es converteix
       <h1>My header</h1>
     </body>
 </html>
-
 ```
 
-**automàticament es crearà aquest arbre de nodes.**
+**automáticamente se creará este árbol de nodos.**
 
-![Exemple arbre nodes](img/arbre-nodes.jpg)
+![Ejemplo árbol de nodos](img/arbre-nodes.jpg)
 
-La creació automàtica per part del navegador de Document Object Model (DOM) és una de les innovacions que més ha influït en el desenvolupament de les pàgines web dinàmiques i de les aplicacions web més complexes. DOM permet als programadors web accedir i manipular els elements HTML, creant, modificant o eliminant-los. 
+La creación automática por parte del navegador de Document Object Model (DOM) es una de las innovaciones que más ha influido en el desarrollo de las páginas web dinámicas y de las aplicaciones web más complejas. DOM permite a los programadores web acceder y manipular los elementos HTML, creando, modificando o eliminándolos.
 
-DOM s'ha convertit en una utilitat disponible per a la majoria de llenguatges de programació (Java, PHP, JavaScript) i les úniques diferències es troben en la forma d'implementar-ho.
+DOM se ha convertido en una utilidad disponible para la mayoría de lenguajes de programación (Java, PHP, JavaScript) y las únicas diferencias se encuentran en la forma de implementarlo.
 
 ---
 
-# 2. Arbre de nodes 
+# 2. Árbol de nodos
 
-Una de les tasques habituals en la programació d'aplicacions web amb JavaScript consisteix en la manipulació de les pàgines web. 
+Una de las tareas habituales en la programación de aplicaciones web con JavaScript consiste en la manipulación de las páginas web.
 
-D'aquesta manera, és habitual obtenir el valor emmagatzemat per alguns elements (per exemple, els elements d'un formulari), crear elements (paràgrafs, `<div>`, etc.) de forma dinàmica i afegir-los a la pàgina, o aplicar animacions a un element (fer-lo aparèixer/desaparèixer, desplaçar-lo, etc.). 
+De esta manera, es habitual obtener el valor almacenado por algunos elementos (por ejemplo, los elementos de un formulario), crear elementos (párrafos, `<div>`, etc.) de forma dinámica y añadirlos a la página, o aplicar animaciones a un elemento (hacerlo aparecer/desaparecer, desplazarlo, etc.).
 
-Totes aquestes tasques són molt senzilles gràcies a DOM. Per això, els navegadors web transformen automàticament totes les pàgines web en una estructura més eficient de manipular. 
+Todas estas tareas son muy sencillas gracias a DOM. Por eso, los navegadores web transforman automáticamente todas las páginas web en una estructura más eficiente de manipular.
 
-**Aquesta transformació la fan tots els navegadors de forma automàtica i ens permet utilitzar les eines de DOM de forma molt senzilla.** 
+**Esta transformación la hacen todos los navegadores de forma automática y nos permite utilizar las herramientas de DOM de forma muy sencilla.**
 
-DOM transforma tots els documents HTML en un conjunt d'elements anomenats nodes, que estan interconnectats i representen els continguts de les pàgines web i les relacions entre aquests. Pel seu aspecte d'arbre amb una única arrel i múltiples branques, la unió de tots els nodes s'anomena "arbre de nodes". 
+DOM transforma todos los documentos HTML en un conjunto de elementos llamados nodos, que están interconectados y representan los contenidos de las páginas web y las relaciones entre estos. Por su aspecto de árbol con una única raíz y múltiples ramas, la unión de todos los nodos se llama "árbol de nodos".
 
-**El DOM no és part de JavaScript; de fet, pot ser utilitzat per altres llenguatges de programació. Tot i això, DOM està íntimament lligat a JavaScript, ja que aquest l'utilitzarà per accedir i modificar les pàgines web dinàmicament.**
+**El DOM no es parte de JavaScript; de hecho, puede ser utilizado por otros lenguajes de programación. Aun así, DOM está íntimamente ligado a JavaScript, ya que este lo utilizará para acceder y modificar las páginas web dinámicamente.**
 
-**Exemple 2: Obtingueu l'arbre de nodes de la següent pàgina HTML senzilla.**
+**Ejemplo 2: Obtén el árbol de nodos de la siguiente página HTML sencilla.**
 
 ```html
 <!DOCTYPE html>
@@ -64,120 +63,119 @@ DOM transforma tots els documents HTML en un conjunt d'elements anomenats nodes,
 </html>
 ```
 
-Es transforma en el següent arbre de nodes:
+Se transforma en el siguiente árbol de nodos:
 
-![Exemple 2 arbre nodes](img/arbre2.jpg)
+![Ejemplo 2 árbol de nodos](img/arbre2.jpg)
 
-A l'esquema anterior, cada rectangle representa un node DOM i les fletxes indiquen les relacions entre nodes. Dins de cada node, s'inclou el tipus (que es veurà més endavant) i el contingut. Un document HTML que es carrega al navegador es converteix en un objecte `document`. Aquest objecte és el node arrel i propietari dels altres nodes. 
+En el esquema anterior, cada rectángulo representa un nodo DOM y las flechas indican las relaciones entre nodos. Dentro de cada nodo, se incluye el tipo (que se verá más adelante) y el contenido. Un documento HTML que se carga en el navegador se convierte en un objeto `document`. Este objeto es el nodo raíz y propietario de los otros nodos.
 
-A partir d'aquest node arrel, cada etiqueta HTML es transforma en un node de tipus "Element". La conversió d'etiquetes en nodes es fa de forma jeràrquica. Per exemple:
+A partir de este nodo raíz, cada etiqueta HTML se transforma en un nodo de tipo "Elemento". La conversión de etiquetas en nodos se hace de forma jerárquica. Por ejemplo:
 
-- Del node arrel només poden derivar els nodes `HEAD` i `BODY`. 
-- A partir d'aquesta derivació inicial, cada etiqueta HTML es transforma en un node que deriva del node corresponent a l'etiqueta pare.
+- Del nodo raíz solo pueden derivar los nodos `HEAD` y `BODY`.
+- A partir de esta derivación inicial, cada etiqueta HTML se transforma en un nodo que deriva del nodo correspondiente a la etiqueta padre.
 
-### La transformació dels elements HTML habituals genera dos nodes:
+### La transformación de los elementos HTML habituales genera dos nodos:
 
-1. Node de tipus "Element" (corresponent a la pròpia etiqueta HTML). 
-2. Node de tipus "Text" que conté el text tancat per aquesta etiqueta HTML.
+1. Nodo de tipo "Elemento" (correspondiente a la propia etiqueta HTML).
+2. Nodo de tipo "Texto" que contiene el texto cerrado por esta etiqueta HTML.
 
-**Exemple 3: Obtingueu l'arbre de nodes de les etiquetes següents:**
-`<title>`Pàgina sencilla`</title>`
+**Ejemplo 3: Obtén el árbol de nodos de las siguientes etiquetas:**
+`<title>`Página sencilla`</title>`
 
-**Genera els nodes següents:**
+**Genera los siguientes nodos:**
 
-- Node de tipus "Element" corresponent a l'etiqueta `<p>`. 
-- Node de tipus "Text" amb el contingut textual de l'etiqueta `<p>`. 
+- Nodo de tipo "Elemento" correspondiente a la etiqueta `<p>`.
+- Nodo de tipo "Texto" con el contenido textual de la etiqueta `<p>`.
 
-Si el contingut de `<p>` inclou a l'interior una altra etiqueta HTML, aquesta etiqueta interior es transforma en un node de tipus "Element" que representa l'etiqueta `<strong>` i que deriva del node anterior. El contingut de l'etiqueta `<strong>` genera un altre node de tipus "Text" que deriva del node generat per `<strong>`. 
-
----
-
-## Transformació automàtica en arbre de nodes
-
-La transformació automàtica de la pàgina en un arbre de nodes sempre segueix les mateixes regles: 
-
-- Les etiquetes HTML es transformen en dos nodes:
-  - El primer node és la pròpia etiqueta.
-  - El segon node és el fill del primer i consisteix en el contingut textual de l'etiqueta.
-- Si una etiqueta HTML es troba dins una altra, els nodes generats seran fills de la seva etiqueta pare.
-
-Les pàgines HTML habituals produeixen arbres amb milers de nodes. Tot i així, el procés de transformació és ràpid i automàtic, i les funcions proporcionades per DOM permeten accedir a qualsevol node de la pàgina de forma senzilla i immediata.  
+Si el contenido de `<p>` incluye en su interior otra etiqueta HTML, esta etiqueta interior se transforma en un nodo de tipo "Elemento" que representa la etiqueta `<strong>` y que deriva del nodo anterior. El contenido de la etiqueta `<strong>` genera otro nodo de tipo "Texto" que deriva del nodo generado por `<strong>`.
 
 ---
 
-# 3. Nodes 
+## Transformación automática en árbol de nodos
 
-Els nodes són els elements sobre els quals es construeixen les connexions de l'arbre DOM. Poden tenir relació de pare, fill o germà: 
+La transformación automática de la página en un árbol de nodos siempre sigue las mismas reglas:
 
-1. **Pare (parent):** Tots els nodes només tenen un pare, excepte l'arrel que no en té perquè és el node superior. 
-2. **Fill (child):** Un node pot tenir un nombre indeterminat de fills (`ChildNodes()`).
-3. **Germà (sibling):** Són nodes amb el mateix pare.
+- Las etiquetas HTML se transforman en dos nodos:
+  - El primer nodo es la propia etiqueta.
+  - El segundo nodo es el hijo del primero y consiste en el contenido textual de la etiqueta.
+- Si una etiqueta HTML se encuentra dentro de otra, los nodos generados serán hijos de su etiqueta padre.
 
-**En aquesta imatge es poden veure els nodes i les relacions.**
+Las páginas HTML habituales producen árboles con miles de nodos. Aun así, el proceso de transformación es rápido y automático, y las funciones proporcionadas por DOM permiten acceder a cualquier nodo de la página de forma sencilla e inmediata.
 
-A l'esquema següent es pot veure l'estructura general de nodes d'un document.
+---
+
+# 3. Nodos
+
+Los nodos son los elementos sobre los cuales se construyen las conexiones del árbol DOM. Pueden tener relación de padre, hijo o hermano:
+
+1. **Padre (parent):** Todos los nodos solo tienen un padre, excepto la raíz que no tiene porque es el nodo superior.
+2. **Hijo (child):** Un nodo puede tener un número indeterminado de hijos (`ChildNodes()`).
+3. **Hermano (sibling):** Son nodos con el mismo padre.
+
+**En esta imagen se pueden ver los nodos y las relaciones.**
+
+En el esquema siguiente se puede ver la estructura general de nodos de un documento.
 
 ![Esquema de estructura](img/esquema-3.jpg)
 
-
-
 ---
 
-## 3.1. Propietats dels nodes 
+## 3.1. Propiedades de los nodos
 
-Independentment del tipus de node, hi ha una sèrie de propietats generals que comparteixen. La taula següent mostra algunes d'aquestes propietats:
+Independientemente del tipo de nodo, hay una serie de propiedades generales que comparten. La tabla siguiente muestra algunas de estas propiedades:
 
-| Propietat         | Descripció                                                          | Retorna                 |
+| Propiedad         | Descripción                                                          | Devuelve                 |
 |-------------------|---------------------------------------------------------------------|-------------------------|
-| `nodeName`        | El nom del node, depenent del tipus de node.                        | Una cadena literal      |
-| `nodeValue`       | El valor del node, depenent del tipus de node.                      | Una cadena literal      |
-| `nodeType`        | Un número que representa el tipus de node.                          | Un número de l'1 al 12  |
-| `ownerDocument`   | El document al qual pertany el node.                                | El document             |
-| `firstChild`      | El primer fill del node.                                            | Un node                 |
-| `lastChild`       | L'últim fill del node.                                              | Un node                 |
-| `childNodes`      | Una llista dels fills del node.                                     | Una matriu de nodes     |
-| `previousSibling` | El germà anterior al node o `null` si és el primer fill.            | Un node                 |
-| `nextSibling`     | El germà següent al node o `null` si és l'últim fill.               | Un node                 |
-| `hasChildNodes`   | Indica si el node té fills o no.                                    | Un booleà               |
-| `atributs`        | Una llista amb els atributs del node.                               | Una matriu d'atributs   |
+| `nodeName`        | El nombre del nodo, dependiendo del tipo de nodo.                   | Una cadena literal      |
+| `nodeValue`       | El valor del nodo, dependiendo del tipo de nodo.                    | Una cadena literal      |
+| `nodeType`        | Un número que representa el tipo de nodo.                           | Un número del 1 al 12   |
+| `ownerDocument`   | El documento al cual pertenece el nodo.                             | El documento            |
+| `firstChild`      | El primer hijo del nodo.                                            | Un nodo                 |
+| `lastChild`       | El último hijo del nodo.                                            | Un nodo                 |
+| `childNodes`      | Una lista de los hijos del nodo.                                    | Una matriz de nodos     |
+| `previousSibling` | El hermano anterior al nodo o `null` si es el primer hijo.          | Un nodo                 |
+| `nextSibling`     | El hermano siguiente al nodo o `null` si es el último hijo.         | Un nodo                 |
+| `hasChildNodes`   | Indica si el nodo tiene hijos o no.                                 | Un booleano             |
+| `atributs`        | Una lista con los atributos del nodo.                               | Una matriz de atributos |
 
 ---
 
-## Tipus de nodes 
+## Tipos de nodos
 
-L'especificació completa de DOM defineix 12 tipus de nodes, encara que les pàgines HTML habituals es poden manipular manejant només quatre o cinc tipus: 
+La especificación completa de DOM define 12 tipos de nodos, aunque las páginas HTML habituales se pueden manipular manejando solo cuatro o cinco tipos:
 
-- **Document:** Node arrel del qual deriven tots els altres nodes de l'arbre. 
-- **Element:** Representa cadascuna de les etiquetes **HTML** És l'únic node que pot contenir atributs i del qual poden derivar altres nodes. 
-- **Attr:** es defineix un node d'aquest tipus per representar cadascun dels atributs **de les etiquetes HTML**, és a dir, un per cada parell atribut=valor. 
-- **Text:** Node que conté el **text tancat per una etiqueta HTML.** 
-- **Comment:** Representa els **comentaris** inclosos a la pàgina HTML.
+- **Document:** Nodo raíz del cual derivan todos los otros nodos del árbol.
+- **Element:** Representa cada una de las etiquetas **HTML**. Es el único nodo que puede contener atributos y del cual pueden derivar otros nodos.
+- **Attr:** Se define un nodo de este tipo para representar cada uno de los atributos **de las etiquetas HTML**, es decir, uno por cada par atributo=valor.
+- **Text:** Nodo que contiene el **texto cerrado por una etiqueta HTML.**
+- **Comment:** Representa los **comentarios** incluidos en la página HTML.
 
-Els altres tipus de nodes existents són: `DocumentType`, `CDataSection`, `DocumentFragment`, `Entity`, `EntityReference`, `ProcessingInstruction` i `Notation`. 
+Los otros tipos de nodos existentes son: `DocumentType`, `CDataSection`, `DocumentFragment`, `Entity`, `EntityReference`, `ProcessingInstruction` y `Notation`.
 
-Per a més informació, visita la [documentació de Mozilla](https://developer.mozilla.org/es/docs/Web/API/Node/nodeType).
+Para más información, visita la [documentación de Mozilla](https://developer.mozilla.org/es/docs/Web/API/Node/nodeType).
 
 ---
-## Elements anyadits
 
-#### Exemple de Codi JavaScript
+## Elementos añadidos
+
+#### Ejemplo de Código JavaScript
 
 ```javaScript
-// Seleccionar un element per id
+// Seleccionar un elemento por id
 const title = document.getElementById('title');
-console.log(title.innerText); // Mostra el text de l'element amb id "title"
+console.log(title.innerText); // Muestra el texto del elemento con id "title"
 
-// Afegir un nou element a la pàgina
+// Añadir un nuevo elemento a la página
 const newParagraph = document.createElement('p');
-newParagraph.textContent = 'Aquest és un paràgraf dinàmic.';
+newParagraph.textContent = 'Este es un párrafo dinámico.';
 document.body.appendChild(newParagraph);
 
-// Canviar el color d'un element existent
+// Cambiar el color de un elemento existente
 title.style.color = 'blue';
 
-// Afegir un esdeveniment
+// Añadir un evento
 newParagraph.addEventListener('click', () => {
-  alert('Has fet clic al paràgraf!');
+  alert('¡Has hecho clic en el párrafo!');
 });
 ```
 
